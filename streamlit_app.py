@@ -27,6 +27,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 streamlit.header("The fruit load list contains:")
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur = my_cnx.cursor()
 
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
